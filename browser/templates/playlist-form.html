@@ -13,7 +13,7 @@
             <div class="form-group">
                 <div class="col-xs-10 col-xs-offset-2">
 	                <div class="alert alert-warning" ng-show="playlistForm.$dirty && playlistForm.$invalid">Please enter a valid title</div>
-                    <button type="submit" class="btn btn-success">Create Playlist</button>
+                    <button type="submit" class="btn btn-success"  ng-click="create(playlist['The New Playlist'])">Create Playlist</button>
                 </div>
             </div>
         </fieldset>
