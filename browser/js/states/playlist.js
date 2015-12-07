@@ -1,7 +1,13 @@
 app.config(function ($stateProvider) {
-	$stateProvider.state('newPlaylist', {
-		url: '/playlists/new',
-		templateUrl: '/templates/playlist-form.html',
-		controller: "PlaylistCtrl"
+	$stateProvider.state('playlist', {
+		url: '/playlists/:playlistId',
+		templateUrl: '/templates/single-playlist.html',
+		controller: 'PlaylistCtrl',
+		resolve: {
+			thePlaylist: function (PlaylistFactory, $stateParams) {
+				console.log($stateParams)
+				return PlaylistFactory.fetchById($stateParams.playlistId);
+			}
+		}
 	});
 });
