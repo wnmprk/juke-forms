@@ -24,8 +24,10 @@
 	<script src="/js/states/artist.js"></script>
 	<script src="/js/states/artist-albums.js"></script>
 	<script src="/js/states/artist-songs.js"></script>
+	<script src="/js/states/playlist.js"></script>
 </head>
 <body ng-app="juke">
+	
 	<div id="main" class="container-fluid">
 
 		<div class="col-xs-2">
@@ -44,7 +46,7 @@
 				<section>
 					<h4 class="text-muted">PLAYLISTS</h4>
 					<p>
-						<a class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus"></span> PLAYLIST</a>
+						<a ui-sref="newPlaylist" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus"></span> PLAYLIST</a>
 					</p>
 				</section>
 			</sidebar>
@@ -67,6 +69,7 @@
 					<button ng-click="forward()" class="btn btn-default">
 						<span class="glyphicon glyphicon-step-forward"></span>
 					</button>
+					
 				</div>
 				<div class="bar">
 					<div class="progress">
@@ -77,5 +80,7 @@
 		</footer>
 
 	</div>
+
+
 </body>
 </html>
