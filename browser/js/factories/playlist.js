@@ -23,11 +23,18 @@ app.factory('PlaylistFactory', function ($http, $q) {
         return $http.post('/api/playlists', data)
         .then(function (response) {
             var playlist = response.data
-            console.log(playlist);
             cachedPlaylists.push(playlist);
             return playlist;
         });
     };
+
+    PlaylistFactory.addSong = function () {
+        return $http.post('/api/playlists/:playlistId/songs')
+        .then(function (response) {
+            console.log(response);
+            return response.data;
+        });
+    }
 
     return PlaylistFactory;
 
