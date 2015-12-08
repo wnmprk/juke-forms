@@ -5,7 +5,6 @@ app.config(function ($stateProvider) {
 		controller: 'PlaylistCtrl',
 		resolve: {
 			thePlaylist: function (PlaylistFactory, $stateParams) {
-				console.log($stateParams)
 				return PlaylistFactory.fetchById($stateParams.playlistId);
 			}
 		}
